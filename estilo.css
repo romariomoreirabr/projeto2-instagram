@@ -1,17 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
 /*Mobile - ativado quando a página tem menos de 614px de largura*/
+
 body {
     display: flex;
     justify-content: center;
     font-family: 'Encode Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
+    border: 0;
+
 }
-.sidebar{
+aside {
     display: none;
 }
-.box-topo {
+header {
     background-color: rgb(255, 255, 255);
     height: 54px;
-    width: 612px;
+    width: 100vw;
     border-bottom: 1px solid #DBDBDB;
     position: fixed;
     display: flex;
@@ -26,8 +33,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 22px 0 22px;
-    width: 568px; /*612 - 22 -22 do padding*/
+    padding: 0 22px;
+    width: 100vw; /*612 - 22 -22 do padding*/
 }
 .topo-icones-wide {
     display: none;
@@ -71,7 +78,7 @@ body {
     color: #979797;
 }
 .pagina {
-    width: 612px;
+    width: 100vw;
 }
 .stories {
     height: 121px;
@@ -96,6 +103,7 @@ body {
     flex-direction: column;
     align-items: center;
     margin-right: 14px;
+    width: 100vw;
 }
 .storie small{
     margin-top: 5px;
@@ -131,9 +139,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 17px 0 17px;
-    border-top: 1px solid #DBDBDB;
-    border-left: 1px solid #DBDBDB;
-    border-right: 1px solid #DBDBDB;
+    border: 1px solid #DBDBDB;
+    border-bottom: 0;
     border-radius: 3px;
 }
 .cabecalho-esquerdo {
@@ -156,14 +163,15 @@ body {
 }
 .post {
     background-color: #FFFFFF;
+    width: 100%;
 } 
 .post-imagem {
-    height: 612px;
-    width: 612px;
+    height: 100%;
+    width: 100%;
 }
 .post-imagem img {
-    height: 612px;
-    width: 612px;
+    height: auto;
+    width:100%;
 }
 .post-reacoes {
     height: 72px;
@@ -199,7 +207,7 @@ body {
 .entrepost{ 
     height: 60px;
 }
-.rodape {
+footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -207,19 +215,23 @@ body {
     height: 54px;
     position: fixed;
     bottom: 0;
-    width: 572px;
+    width: 100vw;
     background-color: rgb(255, 255, 255);
     margin-top: 100px;
+    z-index: 3;
 }
 
 @media (min-width: 615px) /*and (max-width: 935px)*/{
-    .rodape {
+    .pagina {
+        width: 615px;
+    }
+    footer {
         display: none;
     }
-    .sidebar{
+    aside {
         display: none;
     }
-    .box-topo {
+    header {
         width: 100vw;
     }
     .topo {
@@ -249,13 +261,13 @@ body {
 }
 
 @media (min-width: 935px){
-    .box-principal {
+    main {
         display: flex;
         flex-direction: row;
         position: relative;
         width: 935px;
     }
-    .sidebar {
+    aside {
         display: block;
         width: 293px;
         height: 500px;
